@@ -19,12 +19,27 @@ public class Car {
     }
 
     public void move(int generatedNumber) {
-        if(generatedNumber >= 4) {
+        if (generatedNumber >= 4) {
             distance++;
         }
     }
 
+    public int findMaxDistance(Car other) {
+        if (distance >= other.getDistance()) {
+            return distance;
+        }
+        if (distance < other.getDistance()) {
+            return other.getDistance();
+        }
+
+        return 0;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public int getDistance() {
+        return distance;
     }
 }

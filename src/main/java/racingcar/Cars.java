@@ -2,6 +2,7 @@ package racingcar;
 
 import static racingcar.Car.CAR_NAMES_RE_REQUEST_MESSAGE;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -23,5 +24,9 @@ public class Cars {
         if (carNameChecker.size() != cars.size()) {
             throw new IllegalArgumentException(CAR_NAMES_RE_REQUEST_MESSAGE);
         }
+    }
+
+    public List<Car> getCars() {
+        return Collections.unmodifiableList(cars);
     }
 }

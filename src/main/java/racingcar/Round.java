@@ -8,4 +8,8 @@ public class Round {
     public Round(int number) {
         this.number = number;
     }
+
+    public int getNumber() {
+        return number;
+    }
 }
