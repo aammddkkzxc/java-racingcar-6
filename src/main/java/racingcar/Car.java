@@ -1,6 +1,6 @@
 package racingcar;
 
-public class Car {
+public class Car implements Comparable<Car> {
     public static String CAR_NAMES_RE_REQUEST_MESSAGE = "자동차 이름을 다시 입력해 주십시오.";
     private static final int CAN_NAME_LENGTH_MAXIMUM_LIMIT = 5;
 
@@ -24,15 +24,12 @@ public class Car {
         }
     }
 
-    public int findMaxDistance(Car other) {
-        if (distance >= other.getDistance()) {
-            return distance;
-        }
-        if (distance < other.getDistance()) {
-            return other.getDistance();
-        }
+    public boolean isSameDistance(Car other) {
+        return distance == other.distance;
+    }
 
-        return 0;
+    public int compareTo(Car other) {
+        return other.distance - this.distance;
     }
 
     public String getName() {

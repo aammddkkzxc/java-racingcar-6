@@ -21,9 +21,8 @@ public class InputView {
         System.out.println(CAR_NAME_REQUEST_MESSAGE);
 
         String carNames = Console.readLine();
-        Cars cars = new Cars(Converter.convertCarNames(Console.readLine()));
 
-        return cars;
+        return new Cars(Converter.convertCarNames(carNames));
     }
 
     public static Round InputRound() {
@@ -39,8 +38,7 @@ public class InputView {
         System.out.println(ROUND_NUMBER_REQUEST_MESSAGE);
 
         String roundRead = Console.readLine();
-        Round round = new Round(Converter.convertRound(roundRead));
 
-        return round;
+        return new Round(Converter.convertRound(roundRead));
     }
 }
