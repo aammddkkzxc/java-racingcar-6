@@ -5,6 +5,7 @@ public class Car {
     private static final int CAN_NAME_LENGTH_MAXIMUM_LIMIT = 5;
 
     private final String name;
+    private int distance;
 
     public Car(String name) {
         validateCarNameLength(name);
@@ -14,6 +15,12 @@ public class Car {
     private void validateCarNameLength(String name) {
         if (name.length() > CAN_NAME_LENGTH_MAXIMUM_LIMIT) {
             throw new IllegalArgumentException(CAR_NAMES_RE_REQUEST_MESSAGE);
+        }
+    }
+
+    public void move(int generatedNumber) {
+        if(generatedNumber >= 4) {
+            distance++;
         }
     }
 
