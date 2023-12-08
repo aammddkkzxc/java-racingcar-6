@@ -1,5 +1,7 @@
 package racingcar;
 
+import static racingcar.Round.ROUND_NUMBER_RE_REQUEST_MESSAGE;
+
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
@@ -24,11 +26,20 @@ public class InputView {
         return cars;
     }
 
+    public static Round InputRound() {
+        try {
+            return readRound();
+        } catch (IllegalArgumentException e) {
+            System.out.println(ROUND_NUMBER_RE_REQUEST_MESSAGE);
+            return InputRound();
+        }
+    }
+
     private static Round readRound() {
         System.out.println(ROUND_NUMBER_REQUEST_MESSAGE);
 
-        String round = Console.readLine();
-        Round round = ;
+        String roundRead = Console.readLine();
+        Round round = new Round(Converter.convertRound(roundRead));
 
         return round;
     }
